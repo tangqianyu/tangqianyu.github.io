@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>mysql基础 | TangQianYu&#39;s Blog</title>
+  <title>DML查询 | TangQianYu&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="mysql基础">
-<meta property="og:url" content="https://tangqianyu.github.io/2020/07/07/mysql%E5%9F%BA%E7%A1%80/index.html">
+  <meta name="description" content="DQL 查询数据（重点）1234567891011-- 查询全部的学生 select 字段 from 表select from student-- 查询指定字段select &#96;studentNo&#96;,&#96;studentName&#96; from student-- 别名,给结果起一 名字 asselect &#96;studentNo&#96; as 学号,&#96;studentName&#96; as 学生姓名 from studen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DML查询">
+<meta property="og:url" content="https://tangqianyu.github.io/2020/07/09/DML%E6%9F%A5%E8%AF%A2/index.html">
 <meta property="og:site_name" content="TangQianYu&#39;s Blog">
+<meta property="og:description" content="DQL 查询数据（重点）1234567891011-- 查询全部的学生 select 字段 from 表select from student-- 查询指定字段select &#96;studentNo&#96;,&#96;studentName&#96; from student-- 别名,给结果起一 名字 asselect &#96;studentNo&#96; as 学号,&#96;studentName&#96; as 学生姓名 from studen">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-07-07T12:43:12.000Z">
-<meta property="article:modified_time" content="2020-07-07T12:43:42.121Z">
+<meta property="article:published_time" content="2020-07-09T13:33:44.000Z">
+<meta property="article:modified_time" content="2020-07-09T14:05:10.121Z">
 <meta property="article:author" content="qianyu Tang">
-<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="TangQianYu&#39;s Blog" type="application/atom+xml">
@@ -314,11 +315,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-mysql基础" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-DML查询" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/07/07/mysql%E5%9F%BA%E7%A1%80/" class="article-date">
-      <time datetime="2020-07-07T12:43:12.000Z" itemprop="datePublished">2020-07-07</time>
+      <a href="/2020/07/09/DML%E6%9F%A5%E8%AF%A2/" class="article-date">
+      <time datetime="2020-07-09T13:33:44.000Z" itemprop="datePublished">2020-07-09</time>
 </a>
     </div>
   
@@ -331,7 +332,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      mysql基础
+      DML查询
     </h1>
   
 
@@ -341,10 +342,6 @@
         
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -352,7 +349,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h1 id="DQL-查询数据（重点）"><a href="#DQL-查询数据（重点）" class="headerlink" title="DQL 查询数据（重点）"></a>DQL 查询数据（重点）</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 查询全部的学生 select 字段 from 表</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">from</span> student</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查询指定字段</span></span><br><span class="line"><span class="keyword">select</span> <span class="string">`studentNo`</span>,<span class="string">`studentName`</span> <span class="keyword">from</span> student</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 别名,给结果起一 名字 as</span></span><br><span class="line"><span class="keyword">select</span> <span class="string">`studentNo`</span> <span class="keyword">as</span> 学号,<span class="string">`studentName`</span> <span class="keyword">as</span> 学生姓名 <span class="keyword">from</span> student</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 函数 concat(a,b)</span></span><br><span class="line"><span class="keyword">select</span> cancat(<span class="string">'姓名:'</span>,studentName) <span class="keyword">as</span> 学生名字 <span class="keyword">from</span> student</span><br></pre></td></tr></table></figure>
+<p>语法：<code>select 字段... from 表</code></p>
+<h2 id="去重-distinct"><a href="#去重-distinct" class="headerlink" title="去重 distinct"></a>去重 distinct</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 查询哪些同学参加了考试</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> <span class="string">`studentNo`</span> <span class="keyword">from</span> reust</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据库的列-表达式"><a href="#数据库的列-表达式" class="headerlink" title="数据库的列(表达式)"></a>数据库的列(表达式)</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 学员考试成绩 + 1分查看</span></span><br><span class="line"><span class="keyword">select</span> <span class="string">`studentNo`</span>,<span class="string">`studentResult`</span> + <span class="number">1</span> <span class="keyword">as</span> <span class="string">'提分后'</span> <span class="keyword">from</span> <span class="keyword">result</span></span><br></pre></td></tr></table></figure>
+
+<p>数据库中的表达式:文本值，列，null，函数，计算表达式，系统变量…</p>
+<p>select <code>表达式</code> from 表</p>
+<h2 id="where-条件字句"><a href="#where-条件字句" class="headerlink" title="where 条件字句"></a>where 条件字句</h2><p>作用:检索数据中<code>符合条件</code>的值</p>
+<h2 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h2>
       
       
         <div class="page-reward">
@@ -407,13 +413,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/07/07/mysql%E5%9F%BA%E7%A1%80/">mysql基础</a></p>
+        <p><span>本文标题:</span><a href="/2020/07/09/DML%E6%9F%A5%E8%AF%A2/">DML查询</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 qianyu Tang 的个人博客">qianyu Tang</a></p>
-        <p><span>发布时间:</span>2020年07月07日 - 20时43分</p>
-        <p><span>最后更新:</span>2020年07月07日 - 20时43分</p>
+        <p><span>发布时间:</span>2020年07月09日 - 21时33分</p>
+        <p><span>最后更新:</span>2020年07月09日 - 22时05分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/07/07/mysql%E5%9F%BA%E7%A1%80/" title="mysql基础">https://tangqianyu.github.io/2020/07/07/mysql%E5%9F%BA%E7%A1%80/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://tangqianyu.github.io/2020/07/07/mysql%E5%9F%BA%E7%A1%80/　　作者: qianyu Tang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/07/09/DML%E6%9F%A5%E8%AF%A2/" title="DML查询">https://tangqianyu.github.io/2020/07/09/DML%E6%9F%A5%E8%AF%A2/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://tangqianyu.github.io/2020/07/09/DML%E6%9F%A5%E8%AF%A2/　　作者: qianyu Tang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -427,8 +433,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2020/06/16/Angular%E4%B8%AD%E4%BD%95%E6%97%B6%E5%8F%96%E6%B6%88%E8%AE%A2%E9%98%85/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Angular中何时取消订阅（译）</div>
+    <a href="/2020/07/07/mysql%E5%9F%BA%E7%A1%80(%E5%A2%9E%EF%BC%8C%E5%88%A0%EF%BC%8C%E6%94%B9)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mysql基础(增，删，改)</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -439,7 +445,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DQL-查询数据（重点）"><span class="toc-number">1.</span> <span class="toc-text">DQL 查询数据（重点）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#去重-distinct"><span class="toc-number">1.1.</span> <span class="toc-text">去重 distinct</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库的列-表达式"><span class="toc-number">1.2.</span> <span class="toc-text">数据库的列(表达式)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#where-条件字句"><span class="toc-number">1.3.</span> <span class="toc-text">where 条件字句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模糊查询"><span class="toc-number">1.4.</span> <span class="toc-text">模糊查询</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -512,12 +518,12 @@
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2020/06/16/Angular%E4%B8%AD%E4%BD%95%E6%97%B6%E5%8F%96%E6%B6%88%E8%AE%A2%E9%98%85/" title="下一篇: Angular中何时取消订阅（译）">
+            <a href="/2020/07/07/mysql%E5%9F%BA%E7%A1%80(%E5%A2%9E%EF%BC%8C%E5%88%A0%EF%BC%8C%E6%94%B9)/" title="下一篇: mysql基础(增，删，改)">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/07/07/mysql%E5%9F%BA%E7%A1%80/">mysql基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/16/Angular%E4%B8%AD%E4%BD%95%E6%97%B6%E5%8F%96%E6%B6%88%E8%AE%A2%E9%98%85/">Angular中何时取消订阅（译）</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/07/09/DML%E6%9F%A5%E8%AF%A2/">DML查询</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/07/mysql%E5%9F%BA%E7%A1%80(%E5%A2%9E%EF%BC%8C%E5%88%A0%EF%BC%8C%E6%94%B9)/">mysql基础(增，删，改)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/16/Angular%E4%B8%AD%E4%BD%95%E6%97%B6%E5%8F%96%E6%B6%88%E8%AE%A2%E9%98%85/">Angular中何时取消订阅（译）</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
