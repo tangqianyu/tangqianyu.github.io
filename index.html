@@ -79,7 +79,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 
         <h1 id="后端">
           <a href="#后端" class="heading-link"><i class="fas fa-link"></i></a>后端</h1>
-      </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2020/07/29/MySQL/">MySQL基础</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-07-29</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-07-29</span></span></div></header><div class="post-body"><div class="post-excerpt">
+      </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2020/07/29/MySQL/">MySQL基础</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-07-29</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-08-04</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h2 id="1、初识MySQL">
           <a href="#1、初识MySQL" class="heading-link"><i class="fas fa-link"></i></a>1、初识MySQL</h2>
       
@@ -110,13 +110,13 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
           <a href="#1-3、什么是DBMS" class="heading-link"><i class="fas fa-link"></i></a>1.3、什么是DBMS</h3>
       <p>数据库管理系统 ( <strong>D</strong>ataBase <strong>M</strong>anagement <strong>S</strong>ystem )</p>
 <p>数据库管理软件 , 科学组织和存储数据 , 高效地获取和维护数据</p>
-<p><img src="/.io//640.png" alt="640"></p>
+<p><img src="/2020/07/29/MySQL/640.png" alt="640"></p>
 <p>为什么要说这个呢?</p>
 <p>因为我们要学习的MySQL应该算是一个数据库管理系统</p>
 
         <h3 id="1-4、MySQL简介">
           <a href="#1-4、MySQL简介" class="heading-link"><i class="fas fa-link"></i></a>1.4、MySQL简介</h3>
-      <p><img src="/.io//740.png" alt="740"></p>
+      <p><img src="/2020/07/29/MySQL/740.png" alt="740"></p>
 <p><strong>概念</strong> : 是现在流行的开源的,免费的 关系型数据库</p>
 <p><strong>历史</strong> : 由瑞典MySQL AB 公司开发，目前属于 Oracle 旗下产品。</p>
 <p><strong>特点</strong> :</p>
@@ -156,20 +156,218 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <figure class="highlight shell"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net stop mysql</span><br><span class="line">net start mysql</span><br></pre></td></tr></table></div></figure>
 
 <p>12、连接上测试出现以下结果就安装好了</p>
-<p><img src="/.io//840.png" alt="840"></p>
+<p><img src="/2020/07/29/MySQL/840.png" alt="840"></p>
 
         <h2 id="2、数据库操作">
           <a href="#2、数据库操作" class="heading-link"><i class="fas fa-link"></i></a>2、数据库操作</h2>
       
         <h3 id="2-1、结构化查询语句分类">
           <a href="#2-1、结构化查询语句分类" class="heading-link"><i class="fas fa-link"></i></a>2.1、结构化查询语句分类</h3>
+      <p><img src="/2020/07/29/MySQL/940.webp" alt="940"></p>
+
+        <h3 id="2-2、数据库操作">
+          <a href="#2-2、数据库操作" class="heading-link"><i class="fas fa-link"></i></a>2.2、数据库操作</h3>
+      
+        <h4 id="2-2-1、命令行操作数据库">
+          <a href="#2-2-1、命令行操作数据库" class="heading-link"><i class="fas fa-link"></i></a>2.2.1、命令行操作数据库</h4>
+      <p>创建数据库 :  create database [if not exists] 数据库名;</p>
+<p>删除数据库 : drop database [if exists] 数据库名;</p>
+<p>查看数据库 : show databases;</p>
+<p>使用数据库 : use 数据库名;</p>
+
+        <h3 id="2-3、创建数据表">
+          <a href="#2-3、创建数据表" class="heading-link"><i class="fas fa-link"></i></a>2.3、创建数据表</h3>
+      <p>属于DDL的一种，语法 :</p>
+<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> [<span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exists</span>] <span class="string">`表名`</span>(</span><br><span class="line">   <span class="string">'字段名1'</span> 列类型 [属性][索引][注释],</span><br><span class="line">   <span class="string">'字段名2'</span> 列类型 [属性][索引][注释],</span><br><span class="line">  <span class="comment">#...</span></span><br><span class="line">   <span class="string">'字段名n'</span> 列类型 [属性][索引][注释]</span><br><span class="line">)[表类型][表字符集][注释];</span><br></pre></td></tr></table></div></figure>
+<p><strong>说明</strong> : 反引号用于区别MySQL保留字与普通字符而引入的 (键盘esc下面的键).</p>
+
+        <h3 id="2-4、数据值和列类型">
+          <a href="#2-4、数据值和列类型" class="heading-link"><i class="fas fa-link"></i></a>2.4、数据值和列类型</h3>
+      <p>列类型 : 规定数据库中该列存放的数据类型</p>
+
+        <h4 id="2-4-1、数值类型">
+          <a href="#2-4-1、数值类型" class="heading-link"><i class="fas fa-link"></i></a>2.4.1、数值类型</h4>
+      <p><img src="/2020/07/29/MySQL/1040.webp" alt="1040"></p>
+
+        <h4 id="2-4-2、字符串类型">
+          <a href="#2-4-2、字符串类型" class="heading-link"><i class="fas fa-link"></i></a>2.4.2、字符串类型</h4>
+      <p><img src="/2020/07/29/MySQL/1140.webp" alt="1140"></p>
+
+        <h4 id="2-4-3、日期和时间型数值类型">
+          <a href="#2-4-3、日期和时间型数值类型" class="heading-link"><i class="fas fa-link"></i></a>2.4.3、日期和时间型数值类型</h4>
+      <p><img src="/2020/07/29/MySQL/1240.webp" alt="1240"></p>
+
+        <h4 id="2-4-4、NULL值">
+          <a href="#2-4-4、NULL值" class="heading-link"><i class="fas fa-link"></i></a>2.4.4、NULL值</h4>
+      <ul>
+<li><p>理解为 “没有值” 或 “未知值”</p>
+</li>
+<li><p>不要用NULL进行算术运算 , 结果仍为NULL</p>
+</li>
+</ul>
+
+        <h3 id="2-5、数据字段属性">
+          <a href="#2-5、数据字段属性" class="heading-link"><i class="fas fa-link"></i></a>2.5、数据字段属性</h3>
+      <p><font color="red" size="4">UnSigned</font></p>
+<ul>
+<li><p>无符号的</p>
+</li>
+<li><p>声明该数据列不允许负数</p>
+</li>
+</ul>
+<p><font color="red" size="4">ZEROFILL</font></p>
+<ul>
+<li><p>0填充的</p>
+</li>
+<li><p>不足位数的用0来填充 , 如int(3),5则为005</p>
+</li>
+</ul>
+<p><font color="red" size="4">Auto_InCrement</font></p>
+<ul>
+<li><p>自动增长的 , 每添加一条数据 , 自动在上一个记录数上加 1(默认)</p>
+</li>
+<li><p>通常用于设置主键 , 且为整数类型</p>
+</li>
+<li><p>可定义起始值和步长</p>
+<ul>
+<li><p>当前表设置步长(AUTO_INCREMENT=100) : 只影响当前表</p>
+</li>
+<li><p>SET @@auto_increment_increment=5 ; 影响所有使用自增的表(全局)</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><font color="red" size="4">NULL 和 NOT NULL</font></p>
+<ul>
+<li><p>默认为NULL , 即没有插入该列的数值</p>
+</li>
+<li><p>如果设置为NOT NULL , 则该列必须有值</p>
+</li>
+</ul>
+<p><font color="red" size="4">DEFAULT</font></p>
+<ul>
+<li><p>默认的</p>
+</li>
+<li><p>用于设置默认值</p>
+</li>
+<li><p>例如,性别字段,默认为”男” , 否则为 “女” ; 若无指定该列的值 , 则默认值为”男”的值  </p>
+</li>
+</ul>
+<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 目标 : 创建一个school数据库</span></span><br><span class="line"><span class="comment">-- 创建学生表(列,字段)</span></span><br><span class="line"><span class="comment">-- 学号int 登录密码varchar(20) 姓名,性别varchar(2),出生日期(datatime),家庭住址,email</span></span><br><span class="line"><span class="comment">-- 创建表之前 , 一定要先选择数据库</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> <span class="string">`student`</span> (</span><br><span class="line"><span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT <span class="keyword">COMMENT</span> <span class="string">'学号'</span>,</span><br><span class="line"><span class="string">`name`</span> <span class="built_in">varchar</span>(<span class="number">30</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'匿名'</span> <span class="keyword">COMMENT</span> <span class="string">'姓名'</span>,</span><br><span class="line"><span class="string">`pwd`</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'123456'</span> <span class="keyword">COMMENT</span> <span class="string">'密码'</span>,</span><br><span class="line"><span class="string">`sex`</span> <span class="built_in">varchar</span>(<span class="number">2</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'男'</span> <span class="keyword">COMMENT</span> <span class="string">'性别'</span>,</span><br><span class="line"><span class="string">`birthday`</span> datetime <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'生日'</span>,</span><br><span class="line"><span class="string">`address`</span> <span class="built_in">varchar</span>(<span class="number">100</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'地址'</span>,</span><br><span class="line"><span class="string">`email`</span> <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'邮箱'</span>,</span><br><span class="line">PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查看数据库的定义</span></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> school;</span><br><span class="line"><span class="comment">-- 查看数据表的定义</span></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">CREATE</span> <span class="keyword">TABLE</span> student;</span><br><span class="line"><span class="comment">-- 显示表结构</span></span><br><span class="line">DESC student;  <span class="comment">-- 设置严格检查模式(不能容错了)SET sql_mode='STRICT_TRANS_TABLES';</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="2-6、数据表的类型">
+          <a href="#2-6、数据表的类型" class="heading-link"><i class="fas fa-link"></i></a>2.6、数据表的类型</h3>
+      
+        <h4 id="2-6-1、设置数据表的类型">
+          <a href="#2-6-1、设置数据表的类型" class="heading-link"><i class="fas fa-link"></i></a>2.6.1、设置数据表的类型</h4>
+      <figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> 表名(</span><br><span class="line">   <span class="comment">-- 省略一些代码</span></span><br><span class="line">   <span class="comment">-- Mysql注释</span></span><br><span class="line">   <span class="comment">-- 1. # 单行注释</span></span><br><span class="line">   <span class="comment">-- 2. /*...*/ 多行注释</span></span><br><span class="line">)<span class="keyword">ENGINE</span> = MyISAM (<span class="keyword">or</span> <span class="keyword">InnoDB</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查看mysql所支持的引擎类型 (表类型)</span></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">ENGINES</span>;</span><br></pre></td></tr></table></div></figure>
+<p>MySQL的数据表的类型 : <strong>MyISAM</strong> , <strong>InnoDB</strong> , HEAP , BOB , CSV等…</p>
+<p>常见的 MyISAM 与 InnoDB 类型：</p>
+<p><img src="/2020/07/29/MySQL/1340.webp" alt="1340"></p>
+<p>经验 ( 适用场合 )  :</p>
+<ul>
+<li><p>适用 MyISAM : 节约空间及相应速度</p>
+</li>
+<li><p>适用 InnoDB : 安全性 , 事务处理及多用户操作数据表</p>
+</li>
+</ul>
+
+        <h4 id="2-6-2、数据表的存储位置">
+          <a href="#2-6-2、数据表的存储位置" class="heading-link"><i class="fas fa-link"></i></a>2.6.2、数据表的存储位置</h4>
+      <ul>
+<li><p>MySQL数据表以文件方式存放在磁盘中</p>
+<ul>
+<li><p>包括表文件 , 数据文件 , 以及数据库的选项文件</p>
+</li>
+<li><p>位置 : Mysql安装目录\data\下存放数据表 . 目录名对应数据库名 , 该目录下文件名对应数据表</p>
+</li>
+</ul>
+</li>
+<li><p>注意 :</p>
+<ul>
+<li><p>*.frm – 表结构定义文件</p>
+</li>
+<li><p>*.MYD – 数据文件 ( data )</p>
+</li>
+<li><p>*.MYI – 索引文件 ( index )</p>
+</li>
+<li><p>InnoDB类型数据表只有一个 *.frm文件 , 以及上一级目录的ibdata1文件</p>
+</li>
+<li><p>MyISAM类型数据表对应三个文件 :  </p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2020/07/29/MySQL/1440.png" alt="1440"></p>
+
+        <h4 id="2-6-3、设置数据表字符集">
+          <a href="#2-6-3、设置数据表字符集" class="heading-link"><i class="fas fa-link"></i></a>2.6.3、设置数据表字符集</h4>
+      <ul>
+<li><p>我们可为数据库,数据表,数据列设定不同的字符集，设定方法 :</p>
+<ul>
+<li><p>创建时通过命令来设置 , 如 : CREATE TABLE 表名()CHARSET = utf8;</p>
+</li>
+<li><p>如无设定 , 则根据MySQL数据库配置文件 my.ini 中的参数设定</p>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="2-7、修改数据库">
+          <a href="#2-7、修改数据库" class="heading-link"><i class="fas fa-link"></i></a>2.7、修改数据库</h3>
+      
+        <h4 id="2-7-1、修改表-ALTER-TABLE">
+          <a href="#2-7-1、修改表-ALTER-TABLE" class="heading-link"><i class="fas fa-link"></i></a>2.7.1、修改表 ( ALTER TABLE )</h4>
+      <p>修改表名 :ALTER TABLE 旧表名 RENAME AS 新表名</p>
+<p>添加字段 : ALTER TABLE 表名 ADD字段名 列属性[属性]</p>
+<p>修改字段 :</p>
+<ul>
+<li><p>ALTER TABLE 表名 MODIFY 字段名 列类型[属性]</p>
+</li>
+<li><p>ALTER TABLE 表名 CHANGE 旧字段名 新字段名 列属性[属性]</p>
+</li>
+</ul>
+<p>删除字段 :  ALTER TABLE 表名 DROP 字段名</p>
+
+        <h4 id="2-7-2、删除数据表">
+          <a href="#2-7-2、删除数据表" class="heading-link"><i class="fas fa-link"></i></a>2.7.2、删除数据表</h4>
+      <p>语法：DROP TABLE [IF EXISTS] 表名</p>
+<ul>
+<li><p>IF EXISTS为可选 , 判断是否存在该数据表</p>
+</li>
+<li><p>如删除不存在的数据表会抛出错误</p>
+</li>
+</ul>
+
+        <h4 id="2-7-3、其他">
+          <a href="#2-7-3、其他" class="heading-link"><i class="fas fa-link"></i></a>2.7.3、其他</h4>
+      <ol>
+<li><p>可用反引号（`）为标识符（库名、表名、字段名、索引、别名）包裹，以避免与关键字重名！中文也可以作为标识符！</p>
+</li>
+<li><p>每个库目录存在一个保存当前数据库的选项文件db.opt。</p>
+</li>
+<li><p>注释：<br>单行注释 # 注释内容<br>多行注释 /* 注释内容 */<br>单行注释 – 注释内容       (标准SQL注释风格，要求双破折号后加一空格符（空格、TAB、换行等）)</p>
+</li>
+<li><p>模式通配符：<br>_   任意单个字符<br>%   任意多个字符，甚至包括零字符<br>单引号需要进行转义 &#39;</p>
+</li>
+<li><p>CMD命令行内的语句结束符可以为 “;”, “\G”, “\g”，仅影响显示结果。其他地方还是用分号结束。delimiter 可修改当前对话的语句结束符。</p>
+</li>
+<li><p>SQL对大小写不敏感 （关键字）</p>
+</li>
+<li><p>清除已有语句：\c</p>
+</li>
+</ol>
+
+        <h2 id="DML语言">
+          <a href="#DML语言" class="heading-link"><i class="fas fa-link"></i></a>DML语言</h2>
       </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2020/07/29/Mybatis/">Mybatis基础</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-07-29</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-07-29</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h2 id="1、简介">
           <a href="#1、简介" class="heading-link"><i class="fas fa-link"></i></a>1、简介</h2>
       
         <h3 id="1-1、什么是Mybatis">
           <a href="#1-1、什么是Mybatis" class="heading-link"><i class="fas fa-link"></i></a>1.1、什么是Mybatis</h3>
-      <p><img src="/.io//1569633932712.png" alt="1569633932712"></p>
+      <p><img src="/2020/07/29/Mybatis/1569633932712.png" alt="1569633932712"></p>
 <ul>
 <li>MyBatis 是一款优秀的<strong>持久层框架</strong></li>
 <li>它支持定制化 SQL、存储过程以及高级映射。</li>
@@ -421,7 +619,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
           <a href="#3、属性（properties）" class="heading-link"><i class="fas fa-link"></i></a>3、属性（properties）</h3>
       <p>我们可以通过properties属性来实现引用配置文件</p>
 <p>这些属性都是可外部配置且可动态替换的，既可以在典型的 Java 属性文件中配置，亦可通过 properties 元素的子元素来传递。【db.properties】</p>
-<p><img src="/.io//1569656528134.png" alt="1569656528134"></p>
+<p><img src="/2020/07/29/Mybatis/1569656528134.png" alt="1569656528134"></p>
 <p>编写一个配置文件</p>
 <p>db.properties</p>
 <figure class="highlight properties"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">driver</span>=<span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line"><span class="attr">url</span>=<span class="string">jdbc:mysql://localhost:3306/mybatis?useSSL=true&amp;useUnicode=true&amp;characterEncoding=UTF-8</span></span><br><span class="line"><span class="attr">username</span>=<span class="string">root</span></span><br><span class="line"><span class="attr">password</span>=<span class="string">123456</span></span><br></pre></td></tr></table></div></figure>
@@ -458,8 +656,8 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
         <h3 id="5、设置">
           <a href="#5、设置" class="heading-link"><i class="fas fa-link"></i></a>5、设置</h3>
       <p>这是 MyBatis 中极为重要的调整设置，它们会改变 MyBatis 的运行时行为。 </p>
-<p><img src="/.io//1569657659080.png" alt="1569657659080"></p>
-<p><img src="/.io//1569657672791.png" alt="1569657672791"></p>
+<p><img src="/2020/07/29/Mybatis/1569657659080.png" alt="1569657659080"></p>
+<p><img src="/2020/07/29/Mybatis/1569657672791.png" alt="1569657672791"></p>
 
         <h3 id="6、其他配置">
           <a href="#6、其他配置" class="heading-link"><i class="fas fa-link"></i></a>6、其他配置</h3>
@@ -505,7 +703,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 
         <h3 id="8、生命周期和作用域">
           <a href="#8、生命周期和作用域" class="heading-link"><i class="fas fa-link"></i></a>8、生命周期和作用域</h3>
-      <p><img src="/.io//1569660357745.png" alt="1569660357745"></p>
+      <p><img src="/2020/07/29/Mybatis/1569660357745.png" alt="1569660357745"></p>
 <p>生命周期，和作用域，是至关重要的，因为错误的使用会导致非常严重的<strong>并发问题</strong>。</p>
 <p><strong>SqlSessionFactoryBuilder：</strong></p>
 <ul>
@@ -525,7 +723,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <li>SqlSession 的实例不是线程安全的，因此是不能被共享的，所以它的最佳的作用域是请求或方法作用域。</li>
 <li>用完之后需要赶紧关闭，否则资源被占用！</li>
 </ul>
-<p><img src="/.io//1569660737088.png" alt="1569660737088"></p>
+<p><img src="/2020/07/29/Mybatis/1569660737088.png" alt="1569660737088"></p>
 <p>这里面的每一个Mapper，就代表一个具体的业务！</p>
 
         <h2 id="5、解决属性名和字段名不一致的问题">
@@ -534,12 +732,12 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
         <h3 id="1、-问题">
           <a href="#1、-问题" class="heading-link"><i class="fas fa-link"></i></a>1、 问题</h3>
       <p>数据库中的字段</p>
-<p><img src="/.io//1569660831076.png" alt="1569660831076"></p>
+<p><img src="/2020/07/29/Mybatis/1569660831076.png" alt="1569660831076"></p>
 <p>新建一个项目，拷贝之前的，测试实体类字段不一致的情况</p>
 <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 
 <p>测试出现问题</p>
-<p><img src="/.io//1569661145806.png" alt="1569661145806"></p>
+<p><img src="/2020/07/29/Mybatis/1569661145806.png" alt="1569661145806"></p>
 <figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//    select * from mybatis.user where id = #&#123;id&#125;</span><br><span class="line">//类型处理器</span><br><span class="line">//    select id,name,pwd from mybatis.user where id = #&#123;id&#125;</span><br></pre></td></tr></table></div></figure>
 
 
@@ -578,7 +776,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
       <p>如果一个数据库操作，出现了异常，我们需要排错。日志就是最好的助手！</p>
 <p>曾经：sout 、debug</p>
 <p>现在：日志工厂！</p>
-<p><img src="/.io//1569892155104.png" alt="1569892155104"></p>
+<p><img src="/2020/07/29/Mybatis/1569892155104.png" alt="1569892155104"></p>
 <ul>
 <li><p>SLF4J </p>
 </li>
@@ -600,7 +798,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <p>在mybatis核心配置文件中，配置我们的日志！</p>
 <figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"logImpl"</span> <span class="attr">value</span>=<span class="string">"STDOUT_LOGGING"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
 
-<p><img src="/.io//1569892595060.png" alt="1569892595060"></p>
+<p><img src="/2020/07/29/Mybatis/1569892595060.png" alt="1569892595060"></p>
 
         <h3 id="6-2、Log4j">
           <a href="#6-2、Log4j" class="heading-link"><i class="fas fa-link"></i></a>6.2、Log4j</h3>
@@ -622,7 +820,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"logImpl"</span> <span class="attr">value</span>=<span class="string">""</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
 </li>
 <li><p>Log4j的使用！，直接测试运行刚才的查询</p>
-<p><img src="/.io//1569893505842.png" alt="1569893505842"></p>
+<p><img src="/2020/07/29/Mybatis/1569893505842.png" alt="1569893505842"></p>
 </li>
 </ol>
 <p><strong>简单使用</strong></p>
@@ -689,7 +887,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 
         <h3 id="7-3、分页插件">
           <a href="#7-3、分页插件" class="heading-link"><i class="fas fa-link"></i></a>7.3、分页插件</h3>
-      <p><img src="/.io//1569896603103.png" alt="1569896603103"></p>
+      <p><img src="/2020/07/29/Mybatis/1569896603103.png" alt="1569896603103"></p>
 <p>了解即可，万一 以后公司的架构师，说要使用，你需要知道它是什么东西！</p>
 
         <h2 id="8、使用注解开发">
@@ -717,9 +915,9 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 </ol>
 <p>本质：反射机制实现</p>
 <p>底层：动态代理！</p>
-<p> <img src="/.io//1569898830704.png" alt="1569898830704"></p>
+<p> <img src="/2020/07/29/Mybatis/1569898830704.png" alt="1569898830704"></p>
 <p><strong>Mybatis详细的执行流程！</strong></p>
-<p><img src="/.io//Temp.png" alt="1569898830704"></p>
+<p><img src="/2020/07/29/Mybatis/Temp.png" alt="1569898830704"></p>
 
         <h3 id="8-3、CRUD">
           <a href="#8-3、CRUD" class="heading-link"><i class="fas fa-link"></i></a>8.3、CRUD</h3>
@@ -779,13 +977,13 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
         <h2 id="10、多对一处理">
           <a href="#10、多对一处理" class="heading-link"><i class="fas fa-link"></i></a>10、多对一处理</h2>
       <p>多对一：</p>
-<p><img src="/.io//1569909163944.png" alt="1569909163944"></p>
+<p><img src="/2020/07/29/Mybatis/1569909163944.png" alt="1569909163944"></p>
 <ul>
 <li>多个学生，对应一个老师</li>
 <li>对于学生这边而言，  <strong>关联</strong> ..  多个学生，关联一个老师  【多对一】</li>
 <li>对于老师而言， <strong>集合</strong> ， 一个老师，有很多学生 【一对多】</li>
 </ul>
-<p><img src="/.io//1569909422471.png" alt="1569909422471"></p>
+<p><img src="/2020/07/29/Mybatis/1569909422471.png" alt="1569909422471"></p>
 <p>SQL：</p>
 <figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`teacher`</span> (</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">INT</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`name`</span> <span class="built_in">VARCHAR</span>(<span class="number">30</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">INNODB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teacher(<span class="string">`id`</span>, <span class="string">`name`</span>) <span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="string">'秦老师'</span>); </span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`student`</span> (</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">INT</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`name`</span> <span class="built_in">VARCHAR</span>(<span class="number">30</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`tid`</span> <span class="built_in">INT</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>),</span><br><span class="line">  <span class="keyword">KEY</span> <span class="string">`fktid`</span> (<span class="string">`tid`</span>),</span><br><span class="line">  <span class="keyword">CONSTRAINT</span> <span class="string">`fktid`</span> <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> (<span class="string">`tid`</span>) <span class="keyword">REFERENCES</span> <span class="string">`teacher`</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">INNODB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`student`</span> (<span class="string">`id`</span>, <span class="string">`name`</span>, <span class="string">`tid`</span>) <span class="keyword">VALUES</span> (<span class="string">'1'</span>, <span class="string">'小明'</span>, <span class="string">'1'</span>); </span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`student`</span> (<span class="string">`id`</span>, <span class="string">`name`</span>, <span class="string">`tid`</span>) <span class="keyword">VALUES</span> (<span class="string">'2'</span>, <span class="string">'小红'</span>, <span class="string">'1'</span>); </span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`student`</span> (<span class="string">`id`</span>, <span class="string">`name`</span>, <span class="string">`tid`</span>) <span class="keyword">VALUES</span> (<span class="string">'3'</span>, <span class="string">'小张'</span>, <span class="string">'1'</span>); </span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`student`</span> (<span class="string">`id`</span>, <span class="string">`name`</span>, <span class="string">`tid`</span>) <span class="keyword">VALUES</span> (<span class="string">'4'</span>, <span class="string">'小李'</span>, <span class="string">'1'</span>); </span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`student`</span> (<span class="string">`id`</span>, <span class="string">`name`</span>, <span class="string">`tid`</span>) <span class="keyword">VALUES</span> (<span class="string">'5'</span>, <span class="string">'小王'</span>, <span class="string">'1'</span>);</span><br></pre></td></tr></table></div></figure>
 
@@ -956,8 +1154,8 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
           <a href="#Foreach" class="heading-link"><i class="fas fa-link"></i></a>Foreach</h3>
       <figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> <span class="number">1</span>=<span class="number">1</span> <span class="keyword">and</span> </span><br><span class="line"></span><br><span class="line">  &lt;foreach item=<span class="string">"id"</span> collection=<span class="string">"ids"</span></span><br><span class="line">      <span class="keyword">open</span>=<span class="string">"("</span> separator=<span class="string">"or"</span> <span class="keyword">close</span>=<span class="string">")"</span>&gt;</span><br><span class="line">        <span class="comment">#&#123;id&#125;</span></span><br><span class="line">  &lt;/foreach&gt;</span><br><span class="line"></span><br><span class="line">(<span class="keyword">id</span>=<span class="number">1</span> <span class="keyword">or</span> <span class="keyword">id</span>=<span class="number">2</span> <span class="keyword">or</span> <span class="keyword">id</span>=<span class="number">3</span>)</span><br></pre></td></tr></table></div></figure>
 
-<p><img src="/.io//1569979229205.png" alt="1569979229205"></p>
-<p><img src="/.io//1569979339190.png" alt="1569979339190"></p>
+<p><img src="/2020/07/29/Mybatis/1569979229205.png" alt="1569979229205"></p>
+<p><img src="/2020/07/29/Mybatis/1569979339190.png" alt="1569979339190"></p>
 <figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">        select * from mybatis.blog where 1=1 and (id=1 or id = 2 or id=3)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        我们现在传递一个万能的map ， 这map中可以存在一个集合！</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryBlogForeach"</span> <span class="attr">parameterType</span>=<span class="string">"map"</span> <span class="attr">resultType</span>=<span class="string">"blog"</span>&gt;</span></span><br><span class="line">    select * from mybatis.blog</span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">where</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"ids"</span> <span class="attr">item</span>=<span class="string">"id"</span> <span class="attr">open</span>=<span class="string">"and ("</span> <span class="attr">close</span>=<span class="string">")"</span> <span class="attr">separator</span>=<span class="string">"or"</span>&gt;</span></span><br><span class="line">            id = #&#123;id&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">where</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
 
 
@@ -1028,18 +1226,18 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <li>测试在一个Sesion中查询两次相同记录</li>
 <li>查看日志输出</li>
 </ol>
-<p><img src="/.io//1569983650437.png" alt="1569983650437"></p>
+<p><img src="/2020/07/29/Mybatis/1569983650437.png" alt="1569983650437"></p>
 <p>缓存失效的情况：</p>
 <ol>
 <li><p>查询不同的东西</p>
 </li>
 <li><p>增删改操作，可能会改变原来的数据，所以必定会刷新缓存！</p>
-<p><img src="/.io//1569983952321.png" alt="1569983952321"></p>
+<p><img src="/2020/07/29/Mybatis/1569983952321.png" alt="1569983952321"></p>
 </li>
 <li><p>查询不同的Mapper.xml</p>
 </li>
 <li><p>手动清理缓存！</p>
-<p><img src="/.io//1569984008824.png" alt="1569984008824"></p>
+<p><img src="/2020/07/29/Mybatis/1569984008824.png" alt="1569984008824"></p>
 </li>
 </ol>
 <p>小结：一级缓存默认是开启的，只在一次SqlSession中有效，也就是拿到连接到关闭连接这个区间段！</p>
@@ -1089,7 +1287,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 
         <h3 id="13-5、缓存原理">
           <a href="#13-5、缓存原理" class="heading-link"><i class="fas fa-link"></i></a>13.5、缓存原理</h3>
-      <p><img src="/.io//1569985541106.png" alt="1569985541106"></p>
+      <p><img src="/2020/07/29/Mybatis/1569985541106.png" alt="1569985541106"></p>
 
         <h3 id="13-6、自定义缓存-ehcache">
           <a href="#13-6、自定义缓存-ehcache" class="heading-link"><i class="fas fa-link"></i></a>13.6、自定义缓存-ehcache</h3>
@@ -1161,7 +1359,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
       <ul>
 <li>*.htm, *.html,这些都是网页的后缀，如果服务器上一直存在这些东西，我们就可以直接进行读取。通络；</li>
 </ul>
-<p><img src="/.io//1567822802516.png" alt="1567822802516"></p>
+<p><img src="/2020/07/29/JavaWeb/1567822802516.png" alt="1567822802516"></p>
 <ul>
 <li>静态web存在的缺点<ul>
 <li>Web页面无法动态更新，所有用户看到都是同一个页面<ul>
@@ -1178,7 +1376,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
         <h3 id="1-4、动态web">
           <a href="#1-4、动态web" class="heading-link"><i class="fas fa-link"></i></a>1.4、动态web</h3>
       <p>页面会动态展示： “Web的页面展示的效果因人而异”；</p>
-<p><img src="/.io//1567823191289.png" alt="1567823191289"></p>
+<p><img src="/2020/07/29/JavaWeb/1567823191289.png" alt="1567823191289"></p>
 <p>缺点：</p>
 <ul>
 <li>加入服务器的动态web资源出现了错误，我们需要重新编写我们的<strong>后台程序</strong>,重新发布；<ul>
@@ -1191,7 +1389,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <li>Web页面可以动态更新，所有用户看到都不是同一个页面</li>
 <li>它可以与数据库交互 （数据持久化：注册，商品信息，用户信息……..）</li>
 </ul>
-<p><img src="/.io//1567823350584.png" alt="1567823350584"></p>
+<p><img src="/2020/07/29/JavaWeb/1567823350584.png" alt="1567823350584"></p>
 <p>新手村：–魔鬼训练（分析原理，看源码）–&gt; PK场</p>
 
         <h2 id="2、web服务器">
@@ -1240,7 +1438,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <p><strong>IIS</strong></p>
 <p>微软的； ASP…,Windows中自带的</p>
 <p><strong>Tomcat</strong></p>
-<p><img src="/.io//1567824446428.png" alt="1567824446428"></p>
+<p><img src="/2020/07/29/JavaWeb/1567824446428.png" alt="1567824446428"></p>
 <p>面向百度编程；</p>
 <p>Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，最新的Servlet 和JSP 规范总是能在Tomcat 中得到体现，因为Tomcat 技术先进、性能稳定，而且<strong>免费</strong>，因而深受Java 爱好者的喜爱并得到了部分软件开发商的认可，成为目前比较流行的Web 应用服务器。</p>
 <p>Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用<span class="exturl"><a class="exturl__link" href="https://baike.baidu.com/item/服务器" target="_blank" rel="noopener">服务器</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。对于一个Java初学web的人来说，它是最佳的选择</p>
@@ -1260,15 +1458,15 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
         <h3 id="3-1、-安装tomcat">
           <a href="#3-1、-安装tomcat" class="heading-link"><i class="fas fa-link"></i></a>3.1、 安装tomcat</h3>
       <p>tomcat官网：<span class="exturl"><a class="exturl__link" href="http://tomcat.apache.org/" target="_blank" rel="noopener">http://tomcat.apache.org/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<p><img src="/.io//1567825600842.png" alt="1567825600842"></p>
-<p><img src="/.io//1567825627138.png" alt="1567825627138"></p>
+<p><img src="/2020/07/29/JavaWeb/1567825600842.png" alt="1567825600842"></p>
+<p><img src="/2020/07/29/JavaWeb/1567825627138.png" alt="1567825627138"></p>
 
         <h3 id="3-2、Tomcat启动和配置">
           <a href="#3-2、Tomcat启动和配置" class="heading-link"><i class="fas fa-link"></i></a>3.2、Tomcat启动和配置</h3>
       <p>文件夹作用：</p>
-<p><img src="/.io//1567825763180.png" alt="1567825763180"></p>
+<p><img src="/2020/07/29/JavaWeb/1567825763180.png" alt="1567825763180"></p>
 <p><strong>启动。关闭Tomcat</strong></p>
-<p><img src="/.io//1567825840657.png" alt="1567825840657"></p>
+<p><img src="/2020/07/29/JavaWeb/1567825840657.png" alt="1567825840657"></p>
 <p>访问测试：<span class="exturl"><a class="exturl__link" href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
 <p>可能遇到的问题：</p>
 <ol>
@@ -1279,7 +1477,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 
         <h3 id="3-3、配置">
           <a href="#3-3、配置" class="heading-link"><i class="fas fa-link"></i></a>3.3、配置</h3>
-      <p><img src="/.io//1567825967256.png" alt="1567825967256"></p>
+      <p><img src="/2020/07/29/JavaWeb/1567825967256.png" alt="1567825967256"></p>
 <p>可以配置启动的端口号</p>
 <ul>
 <li>tomcat的默认端口号为：8080</li>
@@ -1309,7 +1507,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <li><p>没有：去DNS服务器找，找到的话就返回，找不到就返回找不到；</p>
 </li>
 </ol>
-<p><img src="/.io//1567827057913.png" alt="1567827057913"></p>
+<p><img src="/2020/07/29/JavaWeb/1567827057913.png" alt="1567827057913"></p>
 </li>
 <li><p>可以配置一下环境变量（可选性）</p>
 </li>
@@ -1448,7 +1646,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
         <h3 id="5-2-下载安装Maven">
           <a href="#5-2-下载安装Maven" class="heading-link"><i class="fas fa-link"></i></a>5.2 下载安装Maven</h3>
       <p>官网;<span class="exturl"><a class="exturl__link" href="https://maven.apache.org/" target="_blank" rel="noopener">https://maven.apache.org/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<p><img src="/.io//1567842350606.png" alt="1567842350606"></p>
+<p><img src="/2020/07/29/JavaWeb/1567842350606.png" alt="1567842350606"></p>
 <p>下载完成后，解压即可；</p>
 <p>小狂神友情建议：电脑上的所有环境都放在一个文件夹下，方便管理；</p>
 
@@ -1461,12 +1659,12 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <li>MAVEN_HOME      maven的目录</li>
 <li>在系统的path中配置  %MAVEN_HOME%\bin</li>
 </ul>
-<p><img src="/.io//1567842882993.png" alt="1567842882993"></p>
+<p><img src="/2020/07/29/JavaWeb/1567842882993.png" alt="1567842882993"></p>
 <p>测试Maven是否安装成功，保证必须配置完毕！</p>
 
         <h3 id="5-4-阿里云镜像">
           <a href="#5-4-阿里云镜像" class="heading-link"><i class="fas fa-link"></i></a>5.4 阿里云镜像</h3>
-      <p><img src="/.io//1567844609399.png" alt="1567844609399"></p>
+      <p><img src="/2020/07/29/JavaWeb/1567844609399.png" alt="1567844609399"></p>
 <ul>
 <li>镜像：mirrors<ul>
 <li>作用：加速我们的下载</li>
@@ -1490,22 +1688,22 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <li><p>启动IDEA</p>
 </li>
 <li><p>创建一个MavenWeb项目</p>
-<p><img src="/.io//1567844785602.png" alt="1567844785602"></p>
-<p><img src="/.io//1567844841172.png" alt="1567844841172"></p>
-<p><img src="/.io//1567844917185.png" alt="1567844917185"></p>
-<p><img src="/.io//1567844956177.png" alt="1567844956177"></p>
-<p><img src="/.io//1567845029864.png" alt="1567845029864"></p>
+<p><img src="/2020/07/29/JavaWeb/1567844785602.png" alt="1567844785602"></p>
+<p><img src="/2020/07/29/JavaWeb/1567844841172.png" alt="1567844841172"></p>
+<p><img src="/2020/07/29/JavaWeb/1567844917185.png" alt="1567844917185"></p>
+<p><img src="/2020/07/29/JavaWeb/1567844956177.png" alt="1567844956177"></p>
+<p><img src="/2020/07/29/JavaWeb/1567845029864.png" alt="1567845029864"></p>
 </li>
 <li><p>等待项目初始化完毕</p>
-<p><img src="/.io//1567845105970.png" alt="1567845105970"></p>
-<p><img src="/.io//1567845137978.png" alt="1567845137978"></p>
+<p><img src="/2020/07/29/JavaWeb/1567845105970.png" alt="1567845105970"></p>
+<p><img src="/2020/07/29/JavaWeb/1567845137978.png" alt="1567845137978"></p>
 </li>
 <li><p>观察maven仓库中多了什么东西？</p>
 </li>
 <li><p>IDEA中的Maven设置</p>
 <p>注意：IDEA项目创建成功后，看一眼Maven的配置</p>
-<p><img src="/.io//1567845341956.png" alt="1567845341956"></p>
-<p><img src="/.io//1567845413672.png" alt="1567845413672"></p>
+<p><img src="/2020/07/29/JavaWeb/1567845341956.png" alt="1567845341956"></p>
+<p><img src="/2020/07/29/JavaWeb/1567845413672.png" alt="1567845413672"></p>
 </li>
 <li><p>到这里，Maven在IDEA中的配置和使用就OK了!</p>
 </li>
@@ -1513,38 +1711,38 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 
         <h3 id="5-7、创建一个普通的Maven项目">
           <a href="#5-7、创建一个普通的Maven项目" class="heading-link"><i class="fas fa-link"></i></a>5.7、创建一个普通的Maven项目</h3>
-      <p><img src="/.io//1567845557744.png" alt="1567845557744"></p>
-<p><img src="/.io//1567845717377.png" alt="1567845717377"></p>
+      <p><img src="/2020/07/29/JavaWeb/1567845557744.png" alt="1567845557744"></p>
+<p><img src="/2020/07/29/JavaWeb/1567845717377.png" alt="1567845717377"></p>
 <p>这个只有在Web应用下才会有！</p>
-<p><img src="/.io//1567845782034.png" alt="1567845782034"></p>
+<p><img src="/2020/07/29/JavaWeb/1567845782034.png" alt="1567845782034"></p>
 
         <h3 id="5-8-标记文件夹功能">
           <a href="#5-8-标记文件夹功能" class="heading-link"><i class="fas fa-link"></i></a>5.8 标记文件夹功能</h3>
-      <p><img src="/.io//1567845910728.png" alt="1567845910728"></p>
-<p><img src="/.io//1567845957139.png" alt="1567845957139"></p>
-<p><img src="/.io//1567846034906.png" alt="1567846034906"></p>
-<p><img src="/.io//1567846073511.png" alt="1567846073511"></p>
+      <p><img src="/2020/07/29/JavaWeb/1567845910728.png" alt="1567845910728"></p>
+<p><img src="/2020/07/29/JavaWeb/1567845957139.png" alt="1567845957139"></p>
+<p><img src="/2020/07/29/JavaWeb/1567846034906.png" alt="1567846034906"></p>
+<p><img src="/2020/07/29/JavaWeb/1567846073511.png" alt="1567846073511"></p>
 
         <h3 id="5-9-在-IDEA中配置Tomcat">
           <a href="#5-9-在-IDEA中配置Tomcat" class="heading-link"><i class="fas fa-link"></i></a>5.9 在 IDEA中配置Tomcat</h3>
-      <p><img src="/.io//1567846140348.png" alt="1567846140348"></p>
-<p><img src="/.io//1567846179573.png" alt="1567846179573"></p>
-<p><img src="/.io//1567846234175.png" alt="1567846234175"></p>
-<p><img src="/.io//1567846369751.png" alt="1567846369751"></p>
+      <p><img src="/2020/07/29/JavaWeb/1567846140348.png" alt="1567846140348"></p>
+<p><img src="/2020/07/29/JavaWeb/1567846179573.png" alt="1567846179573"></p>
+<p><img src="/2020/07/29/JavaWeb/1567846234175.png" alt="1567846234175"></p>
+<p><img src="/2020/07/29/JavaWeb/1567846369751.png" alt="1567846369751"></p>
 <p>解决警告问题</p>
 <p>必须要的配置：<strong>为什么会有这个问题：我们访问一个网站，需要指定一个文件夹名字；</strong></p>
-<p><img src="/.io//1567846421963.png" alt="1567846421963"></p>
-<p><img src="/.io//1567846546465.png" alt="1567846546465"></p>
-<p><img src="/.io//1567846559111.png" alt="1567846559111"></p>
-<p><img src="/.io//1567846640372.png" alt="1567846640372"></p>
+<p><img src="/2020/07/29/JavaWeb/1567846421963.png" alt="1567846421963"></p>
+<p><img src="/2020/07/29/JavaWeb/1567846546465.png" alt="1567846546465"></p>
+<p><img src="/2020/07/29/JavaWeb/1567846559111.png" alt="1567846559111"></p>
+<p><img src="/2020/07/29/JavaWeb/1567846640372.png" alt="1567846640372"></p>
 
         <h3 id="5-10-pom文件">
           <a href="#5-10-pom文件" class="heading-link"><i class="fas fa-link"></i></a>5.10 pom文件</h3>
       <p>pom.xml 是Maven的核心配置文件</p>
-<p><img src="/.io//1567846784849.png" alt="1567846784849"></p>
+<p><img src="/2020/07/29/JavaWeb/1567846784849.png" alt="1567846784849"></p>
 <figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--Maven版本和头文件--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--这里就是我们刚才配置的GAV--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.kuang<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javaweb-01-maven<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--Package：项目的打包方式</span></span><br><span class="line"><span class="comment">  jar：java应用</span></span><br><span class="line"><span class="comment">  war：JavaWeb应用</span></span><br><span class="line"><span class="comment">  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>war<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--配置--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--项目的默认构建编码--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--编码版本--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--项目依赖--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--具体依赖的jar包配置文件--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--项目构建用的东西--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">finalName</span>&gt;</span>javaweb-01-maven<span class="tag">&lt;/<span class="name">finalName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">pluginManagement</span>&gt;</span><span class="comment">&lt;!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-clean-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-resources-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.8.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-surefire-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.22.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-war-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-install-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.5.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-deploy-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.8.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">pluginManagement</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
 
-<p><img src="/.io//1567847410771.png" alt="1567847410771"></p>
+<p><img src="/2020/07/29/JavaWeb/1567847410771.png" alt="1567847410771"></p>
 <p>maven由于他的约定大于配置，我们之后可以能遇到我们写的配置文件，无法被导出或者生效的问题，解决方案：</p>
 <figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--在build中配置resources，来防止我们资源导出失败的问题--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.properties<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">filtering</span>&gt;</span>true<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/java<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.properties<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">filtering</span>&gt;</span>true<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
 
@@ -1553,28 +1751,28 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 
         <h3 id="5-12-IDEA操作">
           <a href="#5-12-IDEA操作" class="heading-link"><i class="fas fa-link"></i></a>5.12 IDEA操作</h3>
-      <p><img src="/.io//1567847630808.png" alt="1567847630808"></p>
-<p><img src="/.io//1567847662429.png" alt="1567847662429"></p>
+      <p><img src="/2020/07/29/JavaWeb/1567847630808.png" alt="1567847630808"></p>
+<p><img src="/2020/07/29/JavaWeb/1567847662429.png" alt="1567847662429"></p>
 
         <h3 id="5-13-解决遇到的问题">
           <a href="#5-13-解决遇到的问题" class="heading-link"><i class="fas fa-link"></i></a>5.13 解决遇到的问题</h3>
       <ol>
 <li><p>Maven 3.6.2</p>
 <p>解决方法：降级为3.6.1</p>
-<p><img src="/.io//1567904721301.png" alt="1567904721301"></p>
+<p><img src="/2020/07/29/JavaWeb/1567904721301.png" alt="1567904721301"></p>
 </li>
 <li><p>Tomcat闪退</p>
 </li>
 </ol>
 <ol start="3">
 <li><p>IDEA中每次都要重复配置Maven<br>在IDEA中的全局默认配置中去配置</p>
-<p><img src="/.io//1567905247201.png" alt="1567905247201"></p>
-<p><img src="/.io//1567905291002.png" alt="1567905291002"></p>
+<p><img src="/2020/07/29/JavaWeb/1567905247201.png" alt="1567905247201"></p>
+<p><img src="/2020/07/29/JavaWeb/1567905291002.png" alt="1567905291002"></p>
 </li>
 <li><p>Maven项目中Tomcat无法配置</p>
 </li>
 <li><p>maven默认web项目中的web.xml版本问题</p>
-<p><img src="/.io//1567905537026.png" alt="1567905537026"></p>
+<p><img src="/2020/07/29/JavaWeb/1567905537026.png" alt="1567905537026"></p>
 </li>
 <li><p>替换为webapp4.0版本和tomcat一致</p>
 <figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee</span></span></span><br><span class="line"><span class="tag"><span class="string">                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">version</span>=<span class="string">"4.0"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">metadata-complete</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
@@ -1586,10 +1784,10 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <ol start="7">
 <li><p>Maven仓库的使用</p>
 <p>地址：<span class="exturl"><a class="exturl__link" href="https://mvnrepository.com/" target="_blank" rel="noopener">https://mvnrepository.com/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<p><img src="/.io//1567905870750.png" alt="1567905870750"></p>
-<p><img src="/.io//1567905982979.png" alt="1567905982979"></p>
-<p><img src="/.io//1567906017448.png" alt="1567906017448"></p>
-<p><img src="/.io//1567906039469.png" alt="1567906039469"></p>
+<p><img src="/2020/07/29/JavaWeb/1567905870750.png" alt="1567905870750"></p>
+<p><img src="/2020/07/29/JavaWeb/1567905982979.png" alt="1567905982979"></p>
+<p><img src="/2020/07/29/JavaWeb/1567906017448.png" alt="1567906017448"></p>
+<p><img src="/2020/07/29/JavaWeb/1567906039469.png" alt="1567906039469"></p>
 </li>
 </ol>
 
@@ -1631,7 +1829,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 </ol>
 </li>
 <li><p>编写一个Servlet程序</p>
-<p><img src="/.io//1567911804700.png" alt="1567911804700"></p>
+<p><img src="/2020/07/29/JavaWeb/1567911804700.png" alt="1567911804700"></p>
 <ol>
 <li><p>编写一个普通类</p>
 </li>
@@ -1659,7 +1857,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
         <h3 id="6-3、Servlet原理">
           <a href="#6-3、Servlet原理" class="heading-link"><i class="fas fa-link"></i></a>6.3、Servlet原理</h3>
       <p>Servlet是由Web服务器调用，web服务器在收到浏览器请求之后，会：</p>
-<p><img src="/.io//1567913793252.png" alt="1567913793252"></p>
+<p><img src="/2020/07/29/JavaWeb/1567913793252.png" alt="1567913793252"></p>
 
         <h3 id="6-4、Mapping问题">
           <a href="#6-4、Mapping问题" class="heading-link"><i class="fas fa-link"></i></a>6.4、Mapping问题</h3>
@@ -1713,7 +1911,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
           <a href="#3、请求转发" class="heading-link"><i class="fas fa-link"></i></a>3、请求转发</h4>
       <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    ServletContext context = <span class="keyword">this</span>.getServletContext();</span><br><span class="line">    System.out.println(<span class="string">"进入了ServletDemo04"</span>);</span><br><span class="line">    <span class="comment">//RequestDispatcher requestDispatcher = context.getRequestDispatcher("/gp"); //转发的请求路径</span></span><br><span class="line">    <span class="comment">//requestDispatcher.forward(req,resp); //调用forward实现请求转发；</span></span><br><span class="line">    context.getRequestDispatcher(<span class="string">"/gp"</span>).forward(req,resp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 
-<p><img src="/.io//1567924457532.png" alt="1567924457532"></p>
+<p><img src="/2020/07/29/JavaWeb/1567924457532.png" alt="1567924457532"></p>
 
         <h4 id="4、读取资源文件">
           <a href="#4、读取资源文件" class="heading-link"><i class="fas fa-link"></i></a>4、读取资源文件</h4>
@@ -1781,7 +1979,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 
         <h4 id="4、实现重定向">
           <a href="#4、实现重定向" class="heading-link"><i class="fas fa-link"></i></a>4、实现重定向</h4>
-      <p><img src="/.io//1567931587955.png" alt="1567931587955"></p>
+      <p><img src="/2020/07/29/JavaWeb/1567931587955.png" alt="1567931587955"></p>
 <p>B一个web资源收到客户端A请求后，B他会通知A客户端去访问另外一个web资源C，这个过程叫重定向</p>
 <p>常见场景：</p>
 <ul>
@@ -1802,7 +2000,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <li>请求转发的时候，url不会产生变化</li>
 <li>重定向时候，url地址栏会发生变化；</li>
 </ul>
-<p><img src="/.io//1567932163430.png" alt="1567932163430"></p>
+<p><img src="/2020/07/29/JavaWeb/1567932163430.png" alt="1567932163430"></p>
 
         <h4 id="5、简单实现登录重定向">
           <a href="#5、简单实现登录重定向" class="heading-link"><i class="fas fa-link"></i></a>5、简单实现登录重定向</h4>
@@ -1818,12 +2016,12 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
         <h3 id="6-7、HttpServletRequest">
           <a href="#6-7、HttpServletRequest" class="heading-link"><i class="fas fa-link"></i></a>6.7、HttpServletRequest</h3>
       <p>HttpServletRequest代表客户端的请求，用户通过Http协议访问服务器，HTTP请求中的所有信息会被封装到HttpServletRequest，通过这个HttpServletRequest的方法，获得客户端的所有信息；</p>
-<p><img src="/.io//1567933996830.png" alt="1567933996830"></p>
-<p><img src="/.io//1567934023106.png" alt="1567934023106"></p>
+<p><img src="/2020/07/29/JavaWeb/1567933996830.png" alt="1567933996830"></p>
+<p><img src="/2020/07/29/JavaWeb/1567934023106.png" alt="1567934023106"></p>
 
         <h4 id="获取参数，请求转发">
           <a href="#获取参数，请求转发" class="heading-link"><i class="fas fa-link"></i></a>获取参数，请求转发</h4>
-      <p><img src="/.io//1567934110794.png" alt="1567934110794"></p>
+      <p><img src="/2020/07/29/JavaWeb/1567934110794.png" alt="1567934110794"></p>
 <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">    req.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">    resp.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line"></span><br><span class="line">    String username = req.getParameter(<span class="string">"username"</span>);</span><br><span class="line">    String password = req.getParameter(<span class="string">"password"</span>);</span><br><span class="line">    String[] hobbys = req.getParameterValues(<span class="string">"hobbys"</span>);</span><br><span class="line">    System.out.println(<span class="string">"============================="</span>);</span><br><span class="line">    <span class="comment">//后台接收中文乱码问题</span></span><br><span class="line">    System.out.println(username);</span><br><span class="line">    System.out.println(password);</span><br><span class="line">    System.out.println(Arrays.toString(hobbys));</span><br><span class="line">    System.out.println(<span class="string">"============================="</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    System.out.println(req.getContextPath());</span><br><span class="line">    <span class="comment">//通过请求转发</span></span><br><span class="line">    <span class="comment">//这里的 / 代表当前的web应用</span></span><br><span class="line">    req.getRequestDispatcher(<span class="string">"/success.jsp"</span>).forward(req,resp);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 
 <p><strong>面试题：请你聊聊重定向和转发的区别？</strong></p>
@@ -1871,7 +2069,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 
         <h3 id="7-3、Cookie">
           <a href="#7-3、Cookie" class="heading-link"><i class="fas fa-link"></i></a>7.3、Cookie</h3>
-      <p><img src="/.io//1568344447291.png" alt="1568344447291"></p>
+      <p><img src="/2020/07/29/JavaWeb/1568344447291.png" alt="1568344447291"></p>
 <ol>
 <li>从请求中拿到cookie信息</li>
 <li>服务器响应给客户端cookie</li>
@@ -1899,14 +2097,14 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 
         <h3 id="7-4、Session（重点）">
           <a href="#7-4、Session（重点）" class="heading-link"><i class="fas fa-link"></i></a>7.4、Session（重点）</h3>
-      <p><img src="/.io//1568344560794.png" alt="1568344560794"></p>
+      <p><img src="/2020/07/29/JavaWeb/1568344560794.png" alt="1568344560794"></p>
 <p>什么是Session：</p>
 <ul>
 <li>服务器会给每一个用户（浏览器）创建一个Seesion对象；</li>
 <li>一个Seesion独占一个浏览器，只要浏览器没有关闭，这个Session就存在；</li>
 <li>用户登录之后，整个网站它都可以访问！–&gt; 保存用户的信息；保存购物车的信息…..</li>
 </ul>
-<p><img src="/.io//1568342773861.png" alt="1568342773861"></p>
+<p><img src="/2020/07/29/JavaWeb/1568342773861.png" alt="1568342773861"></p>
 <p>Session和cookie的区别：</p>
 <ul>
 <li>Cookie是把用户的数据写给用户的浏览器，浏览器保存 （可以保存多个）</li>
@@ -1929,7 +2127,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 
 
 
-<p><img src="/.io//1568344679763.png" alt="1568344679763"></p>
+<p><img src="/2020/07/29/JavaWeb/1568344679763.png" alt="1568344679763"></p>
 
         <h2 id="8、JSP">
           <a href="#8、JSP" class="heading-link"><i class="fas fa-link"></i></a>8、JSP</h2>
@@ -1956,12 +2154,12 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <li><p>服务器内部工作</p>
 <p>tomcat中有一个work目录；</p>
 <p>IDEA中使用Tomcat的会在IDEA的tomcat中生产一个work目录</p>
-<p><img src="/.io//1568345873736.png" alt="1568345873736"></p>
+<p><img src="/2020/07/29/JavaWeb/1568345873736.png" alt="1568345873736"></p>
 <p>我电脑的地址：</p>
 <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator\.IntelliJIdea2018<span class="number">.1</span>\system\tomcat\Unnamed_javaweb-session-cookie\work\Catalina\localhost\ROOT\org\apache\jsp</span><br></pre></td></tr></table></div></figure>
 
 <p>发现页面转变成了Java程序！</p>
-<p><img src="/.io//1568345948307.png" alt="1568345948307"></p>
+<p><img src="/2020/07/29/JavaWeb/1568345948307.png" alt="1568345948307"></p>
 </li>
 </ul>
 <p><strong>浏览器向服务器发送请求，不管访问什么资源，其实都是在访问Servlet！</strong></p>
@@ -1981,7 +2179,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <li><p>以上的这些个对象我们可以在JSP页面中直接使用！</p>
 </li>
 </ol>
-<p><img src="/.io//1568347078207.png" alt="1568347078207"></p>
+<p><img src="/2020/07/29/JavaWeb/1568347078207.png" alt="1568347078207"></p>
 <p>在JSP页面中；</p>
 <p>只要是 JAVA代码就会原封不动的输出；</p>
 <p>如果是HTML代码，就会被转换为：</p>
@@ -2071,7 +2269,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <p><strong>SQL标签</strong></p>
 <p><strong>XML 标签</strong></p>
 <p><strong>核心标签</strong> （掌握部分）</p>
-<p><img src="/.io//1568362473764.png" alt="1568362473764"></p>
+<p><img src="/2020/07/29/JavaWeb/1568362473764.png" alt="1568362473764"></p>
 <p><strong>JSTL标签库使用步骤</strong></p>
 <ul>
 <li>引入对应的 taglib</li>
@@ -2150,14 +2348,14 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 
         <h3 id="10-1、早些年">
           <a href="#10-1、早些年" class="heading-link"><i class="fas fa-link"></i></a>10.1、早些年</h3>
-      <p><img src="/.io//1568423664332.png" alt="1568423664332"></p>
+      <p><img src="/2020/07/29/JavaWeb/1568423664332.png" alt="1568423664332"></p>
 <p>用户直接访问控制层，控制层就可以直接操作数据库；</p>
 <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">servlet--CRUD--&gt;数据库</span><br><span class="line">弊端：程序十分臃肿，不利于维护  </span><br><span class="line">servlet的代码中：处理请求、响应、视图跳转、处理JDBC、处理业务代码、处理逻辑代码</span><br><span class="line"></span><br><span class="line">架构：没有什么是加一层解决不了的！</span><br><span class="line">程序猿调用</span><br><span class="line">|</span><br><span class="line">JDBC</span><br><span class="line">|</span><br><span class="line">Mysql Oracle SqlServer ....</span><br></pre></td></tr></table></div></figure>
 
 
         <h3 id="10-2、MVC三层架构">
           <a href="#10-2、MVC三层架构" class="heading-link"><i class="fas fa-link"></i></a>10.2、MVC三层架构</h3>
-      <p><img src="/.io//1568424227281.png" alt="1568424227281"></p>
+      <p><img src="/2020/07/29/JavaWeb/1568424227281.png" alt="1568424227281"></p>
 <p>Model</p>
 <ul>
 <li>业务处理 ：业务逻辑（Service）</li>
@@ -2189,7 +2387,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <li>处理中文乱码</li>
 <li>登录验证….</li>
 </ul>
-<p><img src="/.io//1568424858708.png" alt="1568424858708"></p>
+<p><img src="/2020/07/29/JavaWeb/1568424858708.png" alt="1568424858708"></p>
 <p>Filter开发步骤：</p>
 <ol>
 <li><p>导包</p>
@@ -2197,7 +2395,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <li><p>编写过滤器</p>
 <ol>
 <li><p>导包不要错</p>
-<p><img src="/.io//1568425162525.png" alt="1568425162525"></p>
+<p><img src="/2020/07/29/JavaWeb/1568425162525.png" alt="1568425162525"></p>
 <p>实现Filter接口，重写对应的方法即可</p>
 <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CharacterEncodingFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//初始化：web服务器启动，就以及初始化了，随时等待过滤对象出现！</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig filterConfig)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"CharacterEncodingFilter初始化"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Chain : 链</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    1. 过滤中的所有代码，在过滤特定请求的时候都会执行</span></span><br><span class="line"><span class="comment">    2. 必须要让过滤器继续同行</span></span><br><span class="line"><span class="comment">        chain.doFilter(request,response);</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest request, ServletResponse response, FilterChain chain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">        request.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">        response.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">        response.setContentType(<span class="string">"text/html;charset=UTF-8"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"CharacterEncodingFilter执行前...."</span>);</span><br><span class="line">        chain.doFilter(request,response); <span class="comment">//让我们的请求继续走，如果不写，程序到这里就被拦截停止！</span></span><br><span class="line">        System.out.println(<span class="string">"CharacterEncodingFilter执行后...."</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//销毁：web服务器关闭的时候，过滤会销毁</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"CharacterEncodingFilter销毁"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 </li>
@@ -2249,7 +2447,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
         <h2 id="14、JDBC">
           <a href="#14、JDBC" class="heading-link"><i class="fas fa-link"></i></a>14、JDBC</h2>
       <p>什么是JDBC ： Java连接数据库！</p>
-<p><img src="/.io//1568439601825.png" alt="1568439601825"></p>
+<p><img src="/2020/07/29/JavaWeb/1568439601825.png" alt="1568439601825"></p>
 <p>需要jar包的支持：</p>
 <ul>
 <li>java.sql</li>
@@ -2265,7 +2463,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--mysql的驱动--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.47<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
 
 <p>IDEA中连接数据库：</p>
-<p><img src="/.io//1568440926845.png" alt="1568440926845"></p>
+<p><img src="/2020/07/29/JavaWeb/1568440926845.png" alt="1568440926845"></p>
 <p><strong>JDBC 固定步骤：</strong></p>
 <ol>
 <li>加载驱动</li>
@@ -2299,9 +2497,9 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <p>@Test注解只有在方法上有效，只要加了这个注解的方法，就可以直接运行！</p>
 <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"Hello"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 
-<p><img src="/.io//1568442261610.png" alt="1568442261610"></p>
+<p><img src="/2020/07/29/JavaWeb/1568442261610.png" alt="1568442261610"></p>
 <p>失败的时候是红色：</p>
-<p><img src="/.io//1568442289597.png" alt="1568442289597"></p>
+<p><img src="/2020/07/29/JavaWeb/1568442289597.png" alt="1568442289597"></p>
 <p><strong>搭建一个环境</strong></p>
 <figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">account</span>(</span><br><span class="line">   <span class="keyword">id</span> <span class="built_in">INT</span> PRIMARY <span class="keyword">KEY</span> AUTO_INCREMENT,</span><br><span class="line">   <span class="string">`name`</span> <span class="built_in">VARCHAR</span>(<span class="number">40</span>),</span><br><span class="line">   money <span class="built_in">FLOAT</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">account</span>(<span class="string">`name`</span>,money) <span class="keyword">VALUES</span>(<span class="string">'A'</span>,<span class="number">1000</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">account</span>(<span class="string">`name`</span>,money) <span class="keyword">VALUES</span>(<span class="string">'B'</span>,<span class="number">1000</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">account</span>(<span class="string">`name`</span>,money) <span class="keyword">VALUES</span>(<span class="string">'C'</span>,<span class="number">1000</span>);</span><br></pre></td></tr></table></div></figure>
 
@@ -2363,4 +2561,4 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 <blockquote>
 <p>原文链接: <span class="exturl"><a class="exturl__link" href="https://netbasal.com/when-to-unsubscribe-in-angular-d61c6b21bad3" target="_blank" rel="noopener">https://netbasal.com/when-to-unsubscribe-in-angular-d61c6b21bad3</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
 </blockquote>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">2</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2020</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>qianyu Tang</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v4.2.1</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.1.1</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.1.1"></script><script src="/js/stun-boot.js?v=2.1.1"></script><script src="/js/scroll.js?v=2.1.1"></script><script src="/js/header.js?v=2.1.1"></script><script src="/js/sidebar.js?v=2.1.1"></script></body></html>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2020</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>qianyu Tang</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v4.2.1</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.1.1</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.1.1"></script><script src="/js/stun-boot.js?v=2.1.1"></script><script src="/js/scroll.js?v=2.1.1"></script><script src="/js/header.js?v=2.1.1"></script><script src="/js/sidebar.js?v=2.1.1"></script></body></html>
